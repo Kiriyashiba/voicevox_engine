@@ -302,5 +302,7 @@ cat /opt/voicevox_engine/README.md > /dev/stderr
 exec "\$@"
 EOF
 
+
 ENTRYPOINT [ "/entrypoint.sh"  ]
-CMD [ "gosu", "user", "/opt/python/bin/python3", "./run.py", "--voicelib_dir", "/opt/voicevox_core/", "--runtime_dir", "/opt/onnxruntime/lib", "--host", "0.0.0.0" ]
+CMD [ "gosu", "user", "/opt/python/bin/python3", "./run.py", "--voicelib_dir", "/opt/voicevox_core/", "--runtime_dir", "/opt/onnxruntime/lib", "--host", "0.0.0.0", "--cors_policy_mode", "all" ]
+
